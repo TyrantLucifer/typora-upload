@@ -58,6 +58,8 @@ def uploadImg(filepath):
         "content":content
     }
     data = json.dumps(data)
+    s = requests.session()
+    s.keep_alive = False
     requests.put(url, headers=HEADERS, data=data)
     return os.path.join(PREFIX_URL, filename)
 
