@@ -38,7 +38,8 @@ API_URL = "https://api.github.com/repos/{0}/{1}/contents/{2}/".format(
 # setting http request headers
 HEADERS = {
     "Authorization":"token " + TOKEN,
-    "Accept":"application/vnd.github.v3+json"
+    "Accept":"application/vnd.github.v3+json",
+    "Connection":'close'
 }
 
 # upload image to github
@@ -58,8 +59,6 @@ def uploadImg(filepath):
         "content":content
     }
     data = json.dumps(data)
-    s = requests.session()
-    s.keep_alive = False
     requests.put(url, headers=HEADERS, data=data)
     return os.path.join(PREFIX_URL, filename)
 
