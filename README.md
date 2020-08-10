@@ -1,7 +1,6 @@
-# TyporaUploadImgPlug
+# Typora Upload Images Plug
 
-A plug that uploads images to img-bed for Typora
-Typora自动上传图片到图床的插件
+> 一个支持自动上传图片到Github仓库的脚本
 
 ## 痛点
 
@@ -24,3 +23,30 @@ Typora自动上传图片到图床的插件
 ## 使用
 
 目前`Typora`已经支持自定义脚本上传图片，所以我们需要开发一个小小的上传工具即可，在这里我选择了使用Python进行开发，使用Github Api 上传图片到Github 仓库。
+
+1. 配置你机器的Python环境
+2. 使用pip install requests安装包
+3. 下载脚本到本地，修改脚本中的默认参数，一共有下图中四个：
+
+![image-20200811001248491](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/image-20200811001248491.png)
+
+4. 在Typora中配置脚本路径
+
+![image-20200811001400091](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/image-20200811001400091.png)
+
+![image-20200811001430751](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/image-20200811001430751.png)
+
+自定义命令填写：`python 脚本路径`，例如我的脚本保存在/home/tyrantlucifer/下载/TyporaUploadImgPlug-master中，我的自定义命令为`python /home/tyrantlucifer/下载/TyporaUploadImgPlug-master/upload.py`
+
+## 效果展示
+
+![image-20200811002037476](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/Peek 2020-08-11 00-20.gif)
+
+## Tips
+
+如果有好的建议，欢迎发邮件给我，或者关注下方我的个人微信公众号在后台留言，或者加qq群`764374820`反馈
+
+- Email: TyrantLucifer@linuxstudy.cn
+- Blog: https://www.linuxstudy.cn
+
+![我的微信公众号](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/wechat.jpg)
