@@ -1,2 +1,2 @@
 # TyporaUploadImgPlug
-A plug of uploading images to img-bed for Typora
+A plug that uploads images to img-bed for Typora
