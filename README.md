@@ -40,7 +40,7 @@
 
 ## 效果展示
 
-![image-20200811002037476](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/Peek 2020-08-11 00-20.gif)
+![image-20200811002037476](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/peek-2020-08-10.gif)
 
 ## Tips
 
