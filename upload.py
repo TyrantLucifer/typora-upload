@@ -15,6 +15,8 @@ import os
 import sys
 import time
 
+requests.adapters.DEFAULT_RETRIES = 5
+
 # setting github username
 USER = ""
 # setting github repository name
@@ -60,7 +62,8 @@ def uploadImg(filepath):
         "content":content
     }
     data = json.dumps(data)
-    requests.put(url, headers=HEADERS, data=data)
+    result = requests.put(url, headers=HEADERS, data=data)
+    result.close()
     return os.path.join(PREFIX_URL, filename)
 
 # generate new file name by current time
