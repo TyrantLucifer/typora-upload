@@ -48,6 +48,7 @@ def uploadImg(filepath):
         filename = filepath.split("\\")[-1]
     else:
         filename = filepath.split("/")[-1]
+    filename = generateFlieName(filename)
     with open(filepath, "rb") as file:
         content = file.read()
     content = base64.b64encode(content)
@@ -61,6 +62,13 @@ def uploadImg(filepath):
     data = json.dumps(data)
     requests.put(url, headers=HEADERS, data=data)
     return os.path.join(PREFIX_URL, filename)
+
+# generate new file name by current time
+def generateFlieName(filename):
+    postfix = filename.split(".")[-1]
+    prefix = time.strftime('%Y%m%d%H%M%S')
+    filename = prefix + '.' + postfix
+    return filename
 
 # generate api url use filename
 def generateApiUrl(filename):
