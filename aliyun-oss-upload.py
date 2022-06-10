@@ -22,13 +22,19 @@ bucket = oss2.Bucket(oss2.Auth(access_key_id, access_key_secret), endpoint, buck
 
 # upload image to github
 def uploadImg(filepath):
-    if sys.platform.find("win") >= 0:
-        filename = filepath.split("\\")[-1]
-    else:
+    if re.match(r'(http|https):\/\/([\w.]+\/?)\S*', filepath):
         filename = filepath.split("/")[-1]
-    filename = generateFlieName(filename)
-    bucket.put_object_from_file(os.path.join(path_prefix, filename), filepath)
-    return 'https://{0}.{1}/{2}/{3}'.format(bucket_name, endpoint, path_prefix, filename)
+        result = requests.get(filepath)
+        filename = generateFlieName(filename)
+        bucket.put_object('{0}/{1}'.format(path_prefix, filename), result.content)
+    else:
+        if sys.platform.find("win") >= 0:
+            filename = filepath.split("\\")[-1]
+        else:
+            filename = filepath.split("/")[-1]
+        filename = generateFlieName(filename)
+        bucket.put_object_from_file('{0}/{1}'.format(path_prefix, filename), filepath)
+    return 'https://{0}/{1}/{2}'.format(domain_name, path_prefix, filename)
 
 # generate new file name by current time
 def generateFlieName(filename):
