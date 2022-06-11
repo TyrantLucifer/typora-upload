@@ -54,7 +54,7 @@ class InitConfig(object):
     def __init_config_file(self):
         config = configparser.ConfigParser()
         config.add_section('default')
-        config.set('default', 'storge', 'oss')
+        config.set('default', 'storage', 'oss')
         config.add_section('github')
         config.add_section('oss')
         with open(self.config_file, 'w+') as file:
