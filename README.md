@@ -20,6 +20,8 @@
 
 大多数人更喜欢市面上开源许久的`Typora`情有独钟，包括我在内，几乎无人能超越，结合这几点，我总结出了笔记记录的最佳实践：笔记服务商提供数据保存 + Typora编辑笔记 + 图片保存在云端(oss, github etc...)
 
+**萝卜青菜各有所爱，这只是我个人看法，不代表全部，求别杠**
+
 ## 使用
 
 目前`Typora`已经支持自定义脚本上传图片，所以我们需要开发一个小小的上传工具即可，在这里我选择了使用Python进行开发，对接不同的云存储平台去上传图片，目前小插件仅支持github、oss，后续如果有新的需求会持续开发。
@@ -70,7 +72,7 @@ typora-upload --init 云存储类型
 
 打开typora的文件 -> 偏好设置 -> 图像，在上传服务设定里选择`Custom Command`，命令中填入`typora-upload -u`
 
-![image-20220611204431495](https://image.tyrantlucifer.com/images/20220611204432.png)
+![image-20220611204431495](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/20220612005505.png)
 
 ## 效果展示
 
