@@ -28,7 +28,9 @@
 
 1. 源码安装
 ```shell
-
+git clone https://github.com/TyrantLucifer/typora-upload.git
+cd typora-upload
+python(python3) setup.py install
 ```
 
 2. pip安装
@@ -48,21 +50,21 @@ typora-upload --init 云存储类型
 
 | 参数              | 备注                                                         |
 | ----------------- | ------------------------------------------------------------ |
-| access_key_id     | oss access_key_id                                            |
-| access_key_secret | oss access_key_secret                                        |
-| bucket_name       | oss bucket_name                                              |
-| endpoint          | oss endpoint                                                 |
-| path_prefix       | image upload path prefix, do not end with `/`, for example, if you want to upload image to`/image`, this parameter should be set to `image` |
-| domain_name       | oss public domain address                                    |
+| access_key_id     | oss access_key_id，oss密钥id                                 |
+| access_key_secret | oss access_key_secret ，oss密钥                              |
+| bucket_name       | oss bucket_name，oss存储桶名称                               |
+| endpoint          | oss endpoint，oss存储地区                                    |
+| path_prefix       | image upload path prefix, do not end with `/`, for example, if you want to upload image to`/image`, this parameter should be set to `image`，上传到的oss路径 |
+| domain_name       | oss public domain address，do not start with `http://` or `https://`，oss公网访问域名，不带http://或https://协议头 |
 
 #### github
 
 | 参数        | 备注                                                         |
 | ----------- | ------------------------------------------------------------ |
-| user        | github username                                              |
-| repo        | github repository name                                       |
-| path_prefix | image upload path prefix, do not end with `/`, for example, if you want to upload image to`/image`, this parameter should be set to `image` |
-| token       | github token                                                 |
+| user        | github username，github用户名                                |
+| repo        | github repository name，github仓库名称                       |
+| path_prefix | image upload path prefix, do not end with `/`, for example, if you want to upload image to`/image`, this parameter should be set to `image`，上传到github仓库的路径 |
+| token       | github api token                                             |
 
 ### 配置typora
 
